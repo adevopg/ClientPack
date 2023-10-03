@@ -935,3 +935,4 @@ UPLOAD_MARK_UPLOAD_NEED_RECONNECT	Wgrywanie musi zostaæ ponownie rozpoczête.
 USE_ITEM_FAILURE_PRIVATE_SHOP	Nie mo¿esz u¿ywaæ przedmiotów, jeœli otworzy³eœ prywatny Magazyn.
 USE_SKILL_ERROR_UNKNOWN	Nieznany B³¹d Umiejêtnoœci: %s
 LOGIN_FAILURE_NOT_MATCH_IP	BÅ‚Ä…d podczas Å‚Ä…czenia z serwerem
+LOGIN_FAILURE_BANNED_IP_PERMAN	Ten rachunek zostaÅ‚ zamkniÄ™ty i nie jest juÅ¼ dostÄ™pny.

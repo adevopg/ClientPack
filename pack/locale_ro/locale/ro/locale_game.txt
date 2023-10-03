@@ -935,3 +935,4 @@ UPLOAD_MARK_UPLOAD_NEED_RECONNECT	Upload-ul terbuie pornit încã odatã
 USE_ITEM_FAILURE_PRIVATE_SHOP	Nu poþi folosi obiectul dacã ai deschis un magazin.
 USE_SKILL_ERROR_UNKNOWN	Greºealã de competenþã necunoscutã: %s
 LOGIN_FAILURE_NOT_MATCH_IP	Eroare la conectarea la server
+LOGIN_FAILURE_BANNED_IP_PERMAN	Acest cont a fost Ã®nchis È™i nu mai este disponibil.

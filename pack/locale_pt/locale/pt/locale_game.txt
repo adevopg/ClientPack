@@ -935,3 +935,4 @@ UPLOAD_MARK_UPLOAD_NEED_RECONNECT	O upload tem de comeÁar de novo.
 USE_ITEM_FAILURE_PRIVATE_SHOP	N„o podes usar este Item enquanto tiveres uma Loja Privada aberta.
 USE_SKILL_ERROR_UNKNOWN	Erro de Habilidade desconhecido: %s
 LOGIN_FAILURE_NOT_MATCH_IP	Erro ao conectar ao servidor
+LOGIN_FAILURE_BANNED_IP_PERMAN	Esta conta foi fechada e n√£o est√° mais dispon√≠vel.

@@ -935,3 +935,4 @@ UPLOAD_MARK_UPLOAD_NEED_RECONNECT	La carga tiene que ser iniciada de nuevo.
 USE_ITEM_FAILURE_PRIVATE_SHOP	No puedes utilizar ningún objeto mientras tengas abierta una tienda privada.
 USE_SKILL_ERROR_UNKNOWN	Error de habilidad desconocido: %s
 LOGIN_FAILURE_NOT_MATCH_IP	Error al conectar al servidor la direccion IP no coincide con la cuenta registrada.
+LOGIN_FAILURE_BANNED_IP_PERMAN	Esta cuenta se a cerrado y ya no esta disponible.
