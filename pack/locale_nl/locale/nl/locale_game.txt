@@ -934,3 +934,4 @@ UPLOAD_MARK_CHECK_NEED_RECONNECT	De upload moet opnieuw gestart worden.
 UPLOAD_MARK_UPLOAD_NEED_RECONNECT	De upload moet opnieuw gestart worden.	
 USE_ITEM_FAILURE_PRIVATE_SHOP	Je kunt voorwerpen niet gebruiken terwijl je privé warenhuis open is.
 USE_SKILL_ERROR_UNKNOWN	Onbekend Vaardigheids Error: %s	
+LOGIN_FAILURE_NOT_MATCH_IP	Fout bij het verbinden met de server

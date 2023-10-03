@@ -1,6 +1,6 @@
 SERVER_NAME			= "Metin2"
-SERVER_NAME_TEST	= "Test"
-SERVER_IP			= "192.168.0.122"
+SERVER_NAME_TEST	= "Servidor de Pruebas"
+SERVER_IP			= "192.168.1.37"
 SERVER_IP_TEST		= "127.0.0.1"
 CH1_NAME			= "CH1"
 CH2_NAME			= "CH2"

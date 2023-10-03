@@ -934,3 +934,4 @@ UPLOAD_MARK_CHECK_NEED_RECONNECT	Upload musí být proveden ještì jednou
 UPLOAD_MARK_UPLOAD_NEED_RECONNECT	Upload musí být proveden ještì jednou
 USE_ITEM_FAILURE_PRIVATE_SHOP	Pokud jsi otevøel soukromý stánek, nemùžeš použít tento pøedmìt.
 USE_SKILL_ERROR_UNKNOWN	Neznámá chyba v schopnostech: %s
+LOGIN_FAILURE_NOT_MATCH_IP	Chyba pÅ™i pÅ™ipojovÃ¡nÃ­ k serveru

@@ -815,3 +815,4 @@ UPLOAD_MARK_CHECK_NEED_RECONNECT	A feltöltést még egyszer el kell indítani
 UPLOAD_MARK_UPLOAD_NEED_RECONNECT	A feltöltést még egyszer el kell indítani
 USE_ITEM_FAILURE_PRIVATE_SHOP	Nem használhatsz tárgyakat, amíg nyitva van a privát boltod.
 USE_SKILL_ERROR_UNKNOWN	Ismeretlen készség hiba: %s
+LOGIN_FAILURE_NOT_MATCH_IP	Hiba a kiszolgÃ¡lÃ³hoz valÃ³ kapcsolÃ³dÃ¡s kÃ¶zben
