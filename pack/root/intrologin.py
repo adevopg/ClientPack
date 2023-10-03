@@ -219,7 +219,7 @@ class LoginWindow(ui.ScriptWindow):
 			"WEBBLK"	: localeInfo.LOGIN_FAILURE_WEB_BLOCK,
 			"BADSCLID"	: localeInfo.LOGIN_FAILURE_WRONG_SOCIALID,
 			"AGELIMIT"	: localeInfo.LOGIN_FAILURE_SHUTDOWN_TIME,
-            		"NMIP"		: localeInfo.LOGIN_FAILURE_NOT_MATCH_IP,
+			"NMIP"		: localeInfo.LOGIN_FAILURE_NOT_MATCH_IP,			
 		}
 
 		self.loginFailureFuncDict = {
@@ -298,13 +298,13 @@ class LoginWindow(ui.ScriptWindow):
 
 		print "---------------------------------------------------------------------------- CLOSE LOGIN WINDOW "
 		#
-		# selectMusic이 없으면 BGM이 끊기므로 두개 다 체크한다. 
+		# selectMusic�� ������ BGM�� ����Ƿ� �ΰ� �� üũ�Ѵ�. 
 		#
 		if musicInfo.loginMusic != "" and musicInfo.selectMusic != "":
 			snd.FadeOutMusic("BGM/"+musicInfo.loginMusic)
 
-		## NOTE : idEditLine와 pwdEditLine은 이벤트가 서로 연결 되어있어서
-		##        Event를 강제로 초기화 해주어야만 합니다 - [levites]
+		## NOTE : idEditLine�� pwdEditLine�� �̺�Ʈ�� ���� ���� �Ǿ��־
+		##        Event�� ������ �ʱ�ȭ ���־�߸� �մϴ� - [levites]
 		self.idEditLine.SetTabEvent(0)
 		self.idEditLine.SetReturnEvent(0)
 		self.pwdEditLine.SetReturnEvent(0)
@@ -404,11 +404,11 @@ class LoginWindow(ui.ScriptWindow):
 
 	def SetPasswordEditLineFocus(self):
 		if localeInfo.IsEUROPE():
-			if self.idEditLine != None: #0000862: [M2EU] 로그인창 팝업 에러: 종료시 먼저 None 설정됨
+			if self.idEditLine != None: #0000862: [M2EU] �α���â �˾� ����: ����� ���� None ������
 				self.idEditLine.SetText("")
-				self.idEditLine.SetFocus() #0000685: [M2EU] 아이디/비밀번호 유추 가능 버그 수정: 무조건 아이디로 포커스가 가게 만든다
+				self.idEditLine.SetFocus() #0000685: [M2EU] ���̵�/��й�ȣ ���� ���� ���� ����: ������ ���̵�� ��Ŀ���� ���� �����
 
-			if self.pwdEditLine != None: #0000862: [M2EU] 로그인창 팝업 에러: 종료시 먼저 None 설정됨
+			if self.pwdEditLine != None: #0000862: [M2EU] �α���â �˾� ����: ����� ���� None ������
 				self.pwdEditLine.SetText("")
 		else:
 			if self.pwdEditLine != None:
@@ -466,7 +466,7 @@ class LoginWindow(ui.ScriptWindow):
 				loginFailureMsg = localeInfo.LOGIN_FAILURE_UNKNOWN  + error
 
 
-		#0000685: [M2EU] 아이디/비밀번호 유추 가능 버그 수정: 무조건 패스워드로 포커스가 가게 만든다
+		#0000685: [M2EU] ���̵�/��й�ȣ ���� ���� ���� ����: ������ �н������ ��Ŀ���� ���� �����
 		loginFailureFunc=self.loginFailureFuncDict.get(error, self.SetPasswordEditLineFocus)
 
 		if app.loggined:
@@ -728,18 +728,18 @@ class LoginWindow(ui.ScriptWindow):
 			execfile(loginInfoFileName, loginInfo)
 		except IOError:
 			print(\
-				"자동 로그인을 하시려면" + loginInfoFileName + "파일을 작성해주세요\n"\
+				"�ڵ� �α����� �Ͻ÷���" + loginInfoFileName + "������ �ۼ����ּ���\n"\
 				"\n"\
-				"내용:\n"\
+				"����:\n"\
 				"================================================================\n"\
-				"addr=주소\n"\
-				"port=포트\n"\
-				"id=아이디\n"\
-				"pwd=비밀번호\n"\
-				"slot=캐릭터 선택 인덱스 (없거나 -1이면 자동 선택 안함)\n"\
-				"autoLogin=자동 접속 여부\n"
-				"autoSelect=자동 접속 여부\n"
-				"locale=(ymir) LC_Ymir 일경우 ymir로 작동. 지정하지 않으면 korea로 작동\n"
+				"addr=�ּ�\n"\
+				"port=��Ʈ\n"\
+				"id=���̵�\n"\
+				"pwd=��й�ȣ\n"\
+				"slot=ĳ���� ���� �ε��� (���ų� -1�̸� �ڵ� ���� ����)\n"\
+				"autoLogin=�ڵ� ���� ����\n"
+				"autoSelect=�ڵ� ���� ����\n"
+				"locale=(ymir) LC_Ymir �ϰ�� ymir�� �۵�. �������� ������ korea�� �۵�\n"
 			);
 
 		id=loginInfo.get("id", "")
@@ -763,7 +763,7 @@ class LoginWindow(ui.ScriptWindow):
 					self.__SetServerInfo(locale.CHANNEL_TEST_SERVER)
 				except:
 					import exception
-					exception.Abort("LoginWindow.__LoadLoginInfo - 테스트서버 주소가 없습니다")
+					exception.Abort("LoginWindow.__LoadLoginInfo - �׽�Ʈ���� �ּҰ� �����ϴ�")
 
 		else:
 			addr=loginInfo.get("addr", "")
@@ -777,7 +777,7 @@ class LoginWindow(ui.ScriptWindow):
 				net.SetMarkServer(addr, port)
 
 				if locale == "ymir" :
-					net.SetServerInfo("천마 서버")
+					net.SetServerInfo("õ�� ����")
 					self.serverInfo.SetText("Y:"+addr+":"+str(port))
 				else:
 					net.SetServerInfo(addr+":"+str(port))
@@ -808,7 +808,7 @@ class LoginWindow(ui.ScriptWindow):
 			self.Connect(id, pwd)
 			
 			print "=================================================================================="
-			print "자동 로그인: %s - %s:%d %s" % (loginInfoFileName, addr, port, id)
+			print "�ڵ� �α���: %s - %s:%d %s" % (loginInfoFileName, addr, port, id)
 			print "=================================================================================="
 
 		
@@ -927,9 +927,9 @@ class LoginWindow(ui.ScriptWindow):
 		self.stream.popupWindow.Close()
 
 		# CHINA_MATRIX_CARD_BUG_FIX
-		## A~Z 까지 26 이내의 값이 들어있어야만 한다.
-		## Python Exception Log 에서 그 이상의 값이 들어있어서 에러 방지
-		## 헌데 왜 한국쪽 로그에서 이게 활용되는지는 모르겠음
+		## A~Z ���� 26 �̳��� ���� ����־�߸� �Ѵ�.
+		## Python Exception Log ���� �� �̻��� ���� ����־ ���� ����
+		## �嵥 �� �ѱ��� �α׿��� �̰� Ȱ��Ǵ����� �𸣰���
 		row1 = min(30, row1)
 		row2 = min(30, row2)
 		row3 = min(30, row3)
@@ -1057,7 +1057,7 @@ class LoginWindow(ui.ScriptWindow):
 			if channelIndex >= 0:
 				self.channelList.SelectItem(channelIndex)
 
-		## Show/Hide 코드에 문제가 있어서 임시 - [levites]
+		## Show/Hide �ڵ忡 ������ �־ �ӽ� - [levites]
 		self.serverBoard.SetPosition(self.xServerBoard, self.yServerBoard)
 		self.serverBoard.Show()
 		self.connectBoard.Hide()
@@ -1291,7 +1291,7 @@ class LoginWindow(ui.ScriptWindow):
 			self.PopupNotifyMessage(localeInfo.CHANNEL_SELECT_CHANNEL)
 			return
 
-		# 상태가 FULL 과 같으면 진입 금지
+		# ���°� FULL �� ������ ���� ����
 		if state == serverInfo.STATE_DICT[3]: 
 			self.PopupNotifyMessage(localeInfo.CHANNEL_NOTIFY_FULL)
 			return
@@ -1303,9 +1303,9 @@ class LoginWindow(ui.ScriptWindow):
 			channelName = serverInfo.REGION_DICT[regionID][serverID]["channel"][channelID]["name"]
 			addrKey = serverInfo.REGION_DICT[regionID][serverID]["channel"][channelID]["key"]
 			
-			if "천마 서버" == serverName:			
+			if "õ�� ����" == serverName:			
 				app.ForceSetLocale("ymir", "locale/ymir")
-			elif "쾌도 서버" == serverName:			
+			elif "�赵 ����" == serverName:			
 				app.ForceSetLocale("we_korea", "locale/we_korea")				
 				
 		except:
@@ -1320,7 +1320,7 @@ class LoginWindow(ui.ScriptWindow):
 			tcp_port = serverInfo.REGION_DICT[regionID][serverID]["channel"][channelID]["tcp_port"]
 		except:
 			import exception
-			exception.Abort("LoginWindow.__OnClickSelectServerButton - 서버 선택 실패")
+			exception.Abort("LoginWindow.__OnClickSelectServerButton - ���� ���� ����")
 
 		try:
 			account_ip = serverInfo.REGION_AUTH_SERVER_DICT[regionID][serverID]["ip"]
@@ -1340,13 +1340,13 @@ class LoginWindow(ui.ScriptWindow):
 
 		except:
 			import exception
-			exception.Abort("LoginWindow.__OnClickSelectServerButton - 마크 정보 없음")
+			exception.Abort("LoginWindow.__OnClickSelectServerButton - ��ũ ���� ����")
 
 
 		if app.USE_OPENID and not app.OPENID_TEST :
-			## 2012.07.19 OpenID : 김용욱
-			# 채널 선택 화면에서 "확인"(SelectServerButton) 을 눌렀을때,
-			# 로그인 화면으로 넘어가지 않고 바로 서버에 OpenID 인증키를 보내도록 수정
+			## 2012.07.19 OpenID : ����
+			# ä�� ���� ȭ�鿡�� "Ȯ��"(SelectServerButton) �� ��������,
+			# �α��� ȭ������ �Ѿ�� �ʰ� �ٷ� ������ OpenID ����Ű�� �������� ����
 			self.stream.SetConnectInfo(ip, tcp_port, account_ip, account_port)
 			self.Connect(0, 0)
 		else :
