@@ -219,7 +219,7 @@ class LoginWindow(ui.ScriptWindow):
 			"WEBBLK"	: localeInfo.LOGIN_FAILURE_WEB_BLOCK,
 			"BADSCLID"	: localeInfo.LOGIN_FAILURE_WRONG_SOCIALID,
 			"AGELIMIT"	: localeInfo.LOGIN_FAILURE_SHUTDOWN_TIME,
-            "NMIP"		: localeInfo.LOGIN_FAILURE_NOT_MATCH_IP,
+            		"NMIP"		: localeInfo.LOGIN_FAILURE_NOT_MATCH_IP,
 		}
 
 		self.loginFailureFuncDict = {
@@ -298,13 +298,13 @@ class LoginWindow(ui.ScriptWindow):
 
 		print "---------------------------------------------------------------------------- CLOSE LOGIN WINDOW "
 		#
-		# selectMusicÀÌ ¾øÀ¸¸é BGMÀÌ ²÷±â¹Ç·Î µÎ°³ ´Ù Ã¼Å©ÇÑ´Ù. 
+		# selectMusicì´ ì—†ìœ¼ë©´ BGMì´ ëŠê¸°ë¯€ë¡œ ë‘ê°œ ë‹¤ ì²´í¬í•œë‹¤. 
 		#
 		if musicInfo.loginMusic != "" and musicInfo.selectMusic != "":
 			snd.FadeOutMusic("BGM/"+musicInfo.loginMusic)
 
-		## NOTE : idEditLine¿Í pwdEditLineÀº ÀÌº¥Æ®°¡ ¼­·Î ¿¬°á µÇ¾îÀÖ¾î¼­
-		##        Event¸¦ °­Á¦·Î ÃÊ±âÈ­ ÇØÁÖ¾î¾ß¸¸ ÇÕ´Ï´Ù - [levites]
+		## NOTE : idEditLineì™€ pwdEditLineì€ ì´ë²¤íŠ¸ê°€ ì„œë¡œ ì—°ê²° ë˜ì–´ìˆì–´ì„œ
+		##        Eventë¥¼ ê°•ì œë¡œ ì´ˆê¸°í™” í•´ì£¼ì–´ì•¼ë§Œ í•©ë‹ˆë‹¤ - [levites]
 		self.idEditLine.SetTabEvent(0)
 		self.idEditLine.SetReturnEvent(0)
 		self.pwdEditLine.SetReturnEvent(0)
@@ -404,11 +404,11 @@ class LoginWindow(ui.ScriptWindow):
 
 	def SetPasswordEditLineFocus(self):
 		if localeInfo.IsEUROPE():
-			if self.idEditLine != None: #0000862: [M2EU] ·Î±×ÀÎÃ¢ ÆË¾÷ ¿¡·¯: Á¾·á½Ã ¸ÕÀú None ¼³Á¤µÊ
+			if self.idEditLine != None: #0000862: [M2EU] ë¡œê·¸ì¸ì°½ íŒì—… ì—ëŸ¬: ì¢…ë£Œì‹œ ë¨¼ì € None ì„¤ì •ë¨
 				self.idEditLine.SetText("")
-				self.idEditLine.SetFocus() #0000685: [M2EU] ¾ÆÀÌµğ/ºñ¹Ğ¹øÈ£ À¯Ãß °¡´É ¹ö±× ¼öÁ¤: ¹«Á¶°Ç ¾ÆÀÌµğ·Î Æ÷Ä¿½º°¡ °¡°Ô ¸¸µç´Ù
+				self.idEditLine.SetFocus() #0000685: [M2EU] ì•„ì´ë””/ë¹„ë°€ë²ˆí˜¸ ìœ ì¶” ê°€ëŠ¥ ë²„ê·¸ ìˆ˜ì •: ë¬´ì¡°ê±´ ì•„ì´ë””ë¡œ í¬ì»¤ìŠ¤ê°€ ê°€ê²Œ ë§Œë“ ë‹¤
 
-			if self.pwdEditLine != None: #0000862: [M2EU] ·Î±×ÀÎÃ¢ ÆË¾÷ ¿¡·¯: Á¾·á½Ã ¸ÕÀú None ¼³Á¤µÊ
+			if self.pwdEditLine != None: #0000862: [M2EU] ë¡œê·¸ì¸ì°½ íŒì—… ì—ëŸ¬: ì¢…ë£Œì‹œ ë¨¼ì € None ì„¤ì •ë¨
 				self.pwdEditLine.SetText("")
 		else:
 			if self.pwdEditLine != None:
@@ -466,7 +466,7 @@ class LoginWindow(ui.ScriptWindow):
 				loginFailureMsg = localeInfo.LOGIN_FAILURE_UNKNOWN  + error
 
 
-		#0000685: [M2EU] ¾ÆÀÌµğ/ºñ¹Ğ¹øÈ£ À¯Ãß °¡´É ¹ö±× ¼öÁ¤: ¹«Á¶°Ç ÆĞ½º¿öµå·Î Æ÷Ä¿½º°¡ °¡°Ô ¸¸µç´Ù
+		#0000685: [M2EU] ì•„ì´ë””/ë¹„ë°€ë²ˆí˜¸ ìœ ì¶” ê°€ëŠ¥ ë²„ê·¸ ìˆ˜ì •: ë¬´ì¡°ê±´ íŒ¨ìŠ¤ì›Œë“œë¡œ í¬ì»¤ìŠ¤ê°€ ê°€ê²Œ ë§Œë“ ë‹¤
 		loginFailureFunc=self.loginFailureFuncDict.get(error, self.SetPasswordEditLineFocus)
 
 		if app.loggined:
@@ -728,18 +728,18 @@ class LoginWindow(ui.ScriptWindow):
 			execfile(loginInfoFileName, loginInfo)
 		except IOError:
 			print(\
-				"ÀÚµ¿ ·Î±×ÀÎÀ» ÇÏ½Ã·Á¸é" + loginInfoFileName + "ÆÄÀÏÀ» ÀÛ¼ºÇØÁÖ¼¼¿ä\n"\
+				"ìë™ ë¡œê·¸ì¸ì„ í•˜ì‹œë ¤ë©´" + loginInfoFileName + "íŒŒì¼ì„ ì‘ì„±í•´ì£¼ì„¸ìš”\n"\
 				"\n"\
-				"³»¿ë:\n"\
+				"ë‚´ìš©:\n"\
 				"================================================================\n"\
-				"addr=ÁÖ¼Ò\n"\
-				"port=Æ÷Æ®\n"\
-				"id=¾ÆÀÌµğ\n"\
-				"pwd=ºñ¹Ğ¹øÈ£\n"\
-				"slot=Ä³¸¯ÅÍ ¼±ÅÃ ÀÎµ¦½º (¾ø°Å³ª -1ÀÌ¸é ÀÚµ¿ ¼±ÅÃ ¾ÈÇÔ)\n"\
-				"autoLogin=ÀÚµ¿ Á¢¼Ó ¿©ºÎ\n"
-				"autoSelect=ÀÚµ¿ Á¢¼Ó ¿©ºÎ\n"
-				"locale=(ymir) LC_Ymir ÀÏ°æ¿ì ymir·Î ÀÛµ¿. ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é korea·Î ÀÛµ¿\n"
+				"addr=ì£¼ì†Œ\n"\
+				"port=í¬íŠ¸\n"\
+				"id=ì•„ì´ë””\n"\
+				"pwd=ë¹„ë°€ë²ˆí˜¸\n"\
+				"slot=ìºë¦­í„° ì„ íƒ ì¸ë±ìŠ¤ (ì—†ê±°ë‚˜ -1ì´ë©´ ìë™ ì„ íƒ ì•ˆí•¨)\n"\
+				"autoLogin=ìë™ ì ‘ì† ì—¬ë¶€\n"
+				"autoSelect=ìë™ ì ‘ì† ì—¬ë¶€\n"
+				"locale=(ymir) LC_Ymir ì¼ê²½ìš° ymirë¡œ ì‘ë™. ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ koreaë¡œ ì‘ë™\n"
 			);
 
 		id=loginInfo.get("id", "")
@@ -763,7 +763,7 @@ class LoginWindow(ui.ScriptWindow):
 					self.__SetServerInfo(locale.CHANNEL_TEST_SERVER)
 				except:
 					import exception
-					exception.Abort("LoginWindow.__LoadLoginInfo - Å×½ºÆ®¼­¹ö ÁÖ¼Ò°¡ ¾ø½À´Ï´Ù")
+					exception.Abort("LoginWindow.__LoadLoginInfo - í…ŒìŠ¤íŠ¸ì„œë²„ ì£¼ì†Œê°€ ì—†ìŠµë‹ˆë‹¤")
 
 		else:
 			addr=loginInfo.get("addr", "")
@@ -777,7 +777,7 @@ class LoginWindow(ui.ScriptWindow):
 				net.SetMarkServer(addr, port)
 
 				if locale == "ymir" :
-					net.SetServerInfo("Ãµ¸¶ ¼­¹ö")
+					net.SetServerInfo("ì²œë§ˆ ì„œë²„")
 					self.serverInfo.SetText("Y:"+addr+":"+str(port))
 				else:
 					net.SetServerInfo(addr+":"+str(port))
@@ -808,7 +808,7 @@ class LoginWindow(ui.ScriptWindow):
 			self.Connect(id, pwd)
 			
 			print "=================================================================================="
-			print "ÀÚµ¿ ·Î±×ÀÎ: %s - %s:%d %s" % (loginInfoFileName, addr, port, id)
+			print "ìë™ ë¡œê·¸ì¸: %s - %s:%d %s" % (loginInfoFileName, addr, port, id)
 			print "=================================================================================="
 
 		
@@ -927,9 +927,9 @@ class LoginWindow(ui.ScriptWindow):
 		self.stream.popupWindow.Close()
 
 		# CHINA_MATRIX_CARD_BUG_FIX
-		## A~Z ±îÁö 26 ÀÌ³»ÀÇ °ªÀÌ µé¾îÀÖ¾î¾ß¸¸ ÇÑ´Ù.
-		## Python Exception Log ¿¡¼­ ±× ÀÌ»óÀÇ °ªÀÌ µé¾îÀÖ¾î¼­ ¿¡·¯ ¹æÁö
-		## Çåµ¥ ¿Ö ÇÑ±¹ÂÊ ·Î±×¿¡¼­ ÀÌ°Ô È°¿ëµÇ´ÂÁö´Â ¸ğ¸£°ÚÀ½
+		## A~Z ê¹Œì§€ 26 ì´ë‚´ì˜ ê°’ì´ ë“¤ì–´ìˆì–´ì•¼ë§Œ í•œë‹¤.
+		## Python Exception Log ì—ì„œ ê·¸ ì´ìƒì˜ ê°’ì´ ë“¤ì–´ìˆì–´ì„œ ì—ëŸ¬ ë°©ì§€
+		## í—Œë° ì™œ í•œêµ­ìª½ ë¡œê·¸ì—ì„œ ì´ê²Œ í™œìš©ë˜ëŠ”ì§€ëŠ” ëª¨ë¥´ê² ìŒ
 		row1 = min(30, row1)
 		row2 = min(30, row2)
 		row3 = min(30, row3)
@@ -1057,7 +1057,7 @@ class LoginWindow(ui.ScriptWindow):
 			if channelIndex >= 0:
 				self.channelList.SelectItem(channelIndex)
 
-		## Show/Hide ÄÚµå¿¡ ¹®Á¦°¡ ÀÖ¾î¼­ ÀÓ½Ã - [levites]
+		## Show/Hide ì½”ë“œì— ë¬¸ì œê°€ ìˆì–´ì„œ ì„ì‹œ - [levites]
 		self.serverBoard.SetPosition(self.xServerBoard, self.yServerBoard)
 		self.serverBoard.Show()
 		self.connectBoard.Hide()
@@ -1291,7 +1291,7 @@ class LoginWindow(ui.ScriptWindow):
 			self.PopupNotifyMessage(localeInfo.CHANNEL_SELECT_CHANNEL)
 			return
 
-		# »óÅÂ°¡ FULL °ú °°À¸¸é ÁøÀÔ ±İÁö
+		# ìƒíƒœê°€ FULL ê³¼ ê°™ìœ¼ë©´ ì§„ì… ê¸ˆì§€
 		if state == serverInfo.STATE_DICT[3]: 
 			self.PopupNotifyMessage(localeInfo.CHANNEL_NOTIFY_FULL)
 			return
@@ -1303,9 +1303,9 @@ class LoginWindow(ui.ScriptWindow):
 			channelName = serverInfo.REGION_DICT[regionID][serverID]["channel"][channelID]["name"]
 			addrKey = serverInfo.REGION_DICT[regionID][serverID]["channel"][channelID]["key"]
 			
-			if "Ãµ¸¶ ¼­¹ö" == serverName:			
+			if "ì²œë§ˆ ì„œë²„" == serverName:			
 				app.ForceSetLocale("ymir", "locale/ymir")
-			elif "Äèµµ ¼­¹ö" == serverName:			
+			elif "ì¾Œë„ ì„œë²„" == serverName:			
 				app.ForceSetLocale("we_korea", "locale/we_korea")				
 				
 		except:
@@ -1320,7 +1320,7 @@ class LoginWindow(ui.ScriptWindow):
 			tcp_port = serverInfo.REGION_DICT[regionID][serverID]["channel"][channelID]["tcp_port"]
 		except:
 			import exception
-			exception.Abort("LoginWindow.__OnClickSelectServerButton - ¼­¹ö ¼±ÅÃ ½ÇÆĞ")
+			exception.Abort("LoginWindow.__OnClickSelectServerButton - ì„œë²„ ì„ íƒ ì‹¤íŒ¨")
 
 		try:
 			account_ip = serverInfo.REGION_AUTH_SERVER_DICT[regionID][serverID]["ip"]
@@ -1340,13 +1340,13 @@ class LoginWindow(ui.ScriptWindow):
 
 		except:
 			import exception
-			exception.Abort("LoginWindow.__OnClickSelectServerButton - ¸¶Å© Á¤º¸ ¾øÀ½")
+			exception.Abort("LoginWindow.__OnClickSelectServerButton - ë§ˆí¬ ì •ë³´ ì—†ìŒ")
 
 
 		if app.USE_OPENID and not app.OPENID_TEST :
-			## 2012.07.19 OpenID : ±è¿ë¿í
-			# Ã¤³Î ¼±ÅÃ È­¸é¿¡¼­ "È®ÀÎ"(SelectServerButton) À» ´­·¶À»¶§,
-			# ·Î±×ÀÎ È­¸éÀ¸·Î ³Ñ¾î°¡Áö ¾Ê°í ¹Ù·Î ¼­¹ö¿¡ OpenID ÀÎÁõÅ°¸¦ º¸³»µµ·Ï ¼öÁ¤
+			## 2012.07.19 OpenID : ê¹€ìš©ìš±
+			# ì±„ë„ ì„ íƒ í™”ë©´ì—ì„œ "í™•ì¸"(SelectServerButton) ì„ ëˆŒë €ì„ë•Œ,
+			# ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ë„˜ì–´ê°€ì§€ ì•Šê³  ë°”ë¡œ ì„œë²„ì— OpenID ì¸ì¦í‚¤ë¥¼ ë³´ë‚´ë„ë¡ ìˆ˜ì •
 			self.stream.SetConnectInfo(ip, tcp_port, account_ip, account_port)
 			self.Connect(0, 0)
 		else :
