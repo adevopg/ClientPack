@@ -82,4 +82,4 @@ class WebWindow(ui.ScriptWindow):
 		app.MoveWebPage((sx, sy, ex, ey))
 
 WebWindow = WebWindow()
-WebWindow.Open("https://owsap-productions.com/")
+WebWindow.Open("https://www.metin2magic.cl/")
